@@ -3,7 +3,9 @@ const Book = require('./lib/Book');
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.use(express.static(`${__dirname}/public`));
+
+app.get('/api/', (req, res) => {
   Book.all().then((results) => {
     res.json(results);
   }).catch((error) => {
