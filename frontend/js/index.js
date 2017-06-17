@@ -1,6 +1,6 @@
 import Vue from 'vue';
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('Books', require('./components/Books.vue'));
 
 /* eslint-disable no-unused-vars */
 const app = new Vue({
