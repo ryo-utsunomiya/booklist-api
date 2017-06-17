@@ -1,10 +1,6 @@
 import Vue from 'vue';
 
-// Vue.component('example', require('./components/Example.vue'));
-
-Vue.component('example', {
-  template: '<p>Example component</p>',
-});
+Vue.component('example', require('./components/Example.vue'));
 
 /* eslint-disable no-unused-vars */
 const app = new Vue({
