@@ -14,6 +14,34 @@ app.get('/api/', (req, res) => {
   });
 });
 
+app.post('/api/', (req, res) => {
+  Book.create(req.data.title).then((results) => {
+    res.json(results);
+  }).catch((error) => {
+    res.status(500);
+    res.json(error.message);
+  });
+});
+
+
+app.put('/api/:id/rate/add', (req, res) => {
+  Book.addRate(req.params.id).then((results) => {
+    res.json(results);
+  }).catch((error) => {
+    res.status(500);
+    res.json(error.message);
+  });
+});
+
+app.put('/api/:id/rate/dec', (req, res) => {
+  Book.decRate(req.params.id).then((results) => {
+    res.json(results);
+  }).catch((error) => {
+    res.status(500);
+    res.json(error.message);
+  });
+});
+
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!');
 });
