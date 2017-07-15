@@ -15,8 +15,8 @@ export default class Books {
       .catch(err => console.error(err));
   }
 
-  static addRate(id, callback) {
-    return axios.put(`${API_URI}${id}/rate/add`)
+  static incRate(id, callback) {
+    return axios.put(`${API_URI}${id}/rate/inc`)
       .then(res => callback(res.data))
       .catch(err => console.error(err));
   }

@@ -2,7 +2,7 @@
     <ul>
         <li v-for="book in books">
             {{ book.title }}({{ book.rate }})
-            <button @click="addRate(book.id)">+</button>
+            <button @click="incRate(book.id)">+</button>
             <button @click="subRate(book.id)">-</button>
         </li>
     </ul>
@@ -25,7 +25,7 @@
     },
     methods: {
       addRate(id) {
-        Api.Books.addRate(id, res => {
+        Api.Books.incRate(id, res => {
           const book = this.books.find(book => book.id === id);
           book.rate += 1;
         });
