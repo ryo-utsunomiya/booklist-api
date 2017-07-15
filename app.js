@@ -23,6 +23,15 @@ app.post('/api/', (req, res) => {
   });
 });
 
+app.delete('/api/', (req, res) => {
+  Book.delete(req.data.id).then((results) => {
+    res.json(results);
+  }).catch((error) => {
+    res.status(500);
+    res.json(error.message);
+  });
+});
+
 
 app.put('/api/:id/rate/add', (req, res) => {
   Book.addRate(req.params.id).then((results) => {
